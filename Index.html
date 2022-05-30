@@ -1,50 +1,43 @@
-
-<!--
-    Created by 🌍🌎🌏AIM🌍🌎🌏
-    
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+  <title>Your country</title>
+  <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  *{
   margin:0px;
   padding:0px;
   box-sizing:border-box;
   font-family: 'Poppins', sans-serif;
-}
-Body{
-   width:100%;
-   height:100vh; 
-   background-image: radial-gradient( circle 860px at 11.8% 33.5%,  rgba(240,30,92,1) 0%, rgba(244,49,74,1) 30.5%, rgba(249,75,37,1) 56.1%, rgba(250,88,19,1) 75.6%, rgba(253,102,2,1) 100.2% );
-   
-}
-.wrapper{
-  width:340px;
-  height:450px;
+  }
+  Body{
+  width:100vw; 
+  margin:0;
+  padding:0;
+  
+  }
+  .wrapper{
+  width:100%;
   background:white;
   border-radius:20px;
-  position:absolute;
-  top:30%;
-  left:50%;
-  transform:translate(-50%,-50%);
   box-shadow:10px 10px 30px rgba(0,0,0,0.2);
-  Margin-top:100px;
-}
-.img{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  Text-align:center;
+  }
+  .img{
   width:300px;
-  height:200px;
+  height:300px;
   margin-left:20px;
   box-shadow:10px 10px 30px rgba(0,0,0,0.2);
-  margin-top:60px;
   background-position:center;
-  
-}
-.info{
+  border-radius:50%;
+  }
+  .info{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   grid-column-gap:10px;
@@ -54,46 +47,60 @@ Body{
   padding:10px;
   font-size:14px;
   
-}
-.info span:nth-child(1){
+  }
+  .info span:nth-child(1){
   border-right:1px solid black;
-}
-.info span:nth-child(2){
+  }
+  .info span:nth-child(2){
   border-right:1px solid black;
-}
-#text{
-    outline:none;
-    Width:300px;
-    Font-size:17px;
-    margin-left:20px;
-    margin-top:50px;
-    padding:3px;
-}
-a{
-    Position:absolute;
-    top:95%;
-    Background:white;
-    Text-decoration:none;
-    left:50%;
-    Transform:translate(-50%,-50%);
-    Width:300px;
-    Text-align:center;
-    padding:3px 5px;
-    color:#121212;
-    border-radius:5px;
-    box-shadow:10px 10px 30px rgba(0,0,0,0.2);
-}
-
-
-</style>
-  <title>Your country</title>
-  <link rel="stylesheet" href="style.css">
+  }
+  #text{
+  
+  Width:90%;
+  display:block;
+  margin:10px auto;
+  Font-size:17px;
+  padding:3px;
+  }
+  
+  #text:focus{
+  border:none;
+  border-bottom:2px solid black;
+  }
+  a{
+  Position:absolute;
+  top:95%;
+  Background:white;
+  Text-decoration:none;
+  left:50%;
+  Transform:translate(-50%,-50%);
+  Width:300px;
+  Text-align:center;
+  padding:3px 5px;
+  color:#121212;
+  border-radius:5px;
+  box-shadow:10px 10px 30px rgba(0,0,0,0.2);
+  }
+  button{
+  width:50%;
+  height:50px;
+  display:block;
+  margin:10px auto;
+  border-radius:30px;
+  border:none;
+  }
+  button:hover{
+  border:2px solid #111111;
+  background:transparent;
+  }</style>
 </head>
 
 <body>
 
   <div class="wrapper">
   <input placeholder="Enter any country name" value="Bharat" type="text" id="text" onchange="change()">
+    <button onclick="change()">Search</button>
+    
     <img class="img" src="#" alt="flag">
     <div class="info">
       <span>
@@ -110,7 +117,8 @@ a{
       </span>
     </div>
   </div>
-    <script>
+  
+  <script>
   function change(){
    let img=document.querySelector('.img');
    let c_name=document.getElementById('c_name');
